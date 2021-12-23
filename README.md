@@ -132,7 +132,7 @@
   ```
 
 
-* Add a package layout like this
+* Add a package layout like this [commit](https://github.com/kinderp/python-package-tutorial/commit/0c443bbdad22e335ddb0507f03824736d16009e2)
   ```
   ├── LICENSE
   ├── pyproject.toml
@@ -144,3 +144,4 @@
   │       └── __init__.py
   └── test
   ```
+
