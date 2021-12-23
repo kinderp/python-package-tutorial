@@ -129,13 +129,11 @@
   -rw-rw-r-- antonio/antonio    1 2021-12-23 15:09 first-python-package-0.0.1/first_python_package.egg-info/top_level.txt
   -rw-rw-r-- antonio/antonio   90 2021-12-23 15:06 first-python-package-0.0.1/pyproject.toml
   -rw-rw-r-- antonio/antonio   94 2021-12-23 15:09 first-python-package-0.0.1/setup.cfg
- ```
+  ```
+
 
 * Add a package layout like this
-
   ```
-  tree
-  .
   ├── LICENSE
   ├── pyproject.toml
   ├── README.md
