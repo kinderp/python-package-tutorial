@@ -97,10 +97,21 @@
   ```
   touch setup.cfg
   ```
-* Add `[metadata]` section in `setup.cfg` [commit](https://github.com/kinderp/python-package-tutorial/commit/2d81fe55b08e87aba15ecd94f8a8f7d6ab548dd8)
+* Add in `setup.cfg` under `[metadata]` section  [commit](https://github.com/kinderp/python-package-tutorial/commit/2d81fe55b08e87aba15ecd94f8a8f7d6ab548dd8)
   * name
   * version
 
+* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/83722af669350204c27e66efe2ed6060ff616b51)
+  * url
+  * author
+  * author_email
+
+* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/e190b1e20f1a08a4c558de1e189b665272554dab)
+  * description
+
+* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/a0cd6c453a69e008dea94b5c123a240b0976cbd1)
+  * long_description
+  * long_description_content_type
 * Run build process again
   ```
   rm -rf dist
