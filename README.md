@@ -100,18 +100,7 @@
 * Add in `setup.cfg` under `[metadata]` section  [commit](https://github.com/kinderp/python-package-tutorial/commit/2d81fe55b08e87aba15ecd94f8a8f7d6ab548dd8)
   * name
   * version
-
-* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/83722af669350204c27e66efe2ed6060ff616b51)
-  * url
-  * author
-  * author_email
-
-* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/e190b1e20f1a08a4c558de1e189b665272554dab)
-  * description
-
-* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/a0cd6c453a69e008dea94b5c123a240b0976cbd1)
-  * long_description
-  * long_description_content_type
+  
 * Run build process again
   ```
   rm -rf dist
@@ -126,6 +115,25 @@
   -rw-rw-r-- 1 antonio antonio 1101 Dec 23 15:09 first_python_package-0.0.1-py3-none-any.whl
   -rw-rw-r-- 1 antonio antonio 1481 Dec 23 15:09 first-python-package-0.0.1.tar.gz
   ```
+
+* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/83722af669350204c27e66efe2ed6060ff616b51)
+  * url
+  * author
+  * author_email
+
+* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/e190b1e20f1a08a4c558de1e189b665272554dab)
+  * description
+
+* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/a0cd6c453a69e008dea94b5c123a240b0976cbd1)
+  * long_description
+  * long_description_content_type
+  
+* Add a LICENCE file in root dir [commit](https://github.com/kinderp/python-package-tutorial/commit/817109cfb5cbd46a271036b21cc2dc650e16ec5b)
+
+* Add in `setup.cfg` under `[metadata]` section [commit](https://github.com/kinderp/python-package-tutorial/commit/973086d556af285caf9d96b96288e003d940d5a7)
+  * license
+  * license_files
+  * classifiers
 
 * Check its content, you'have an empty package, let's add some code
   ```
