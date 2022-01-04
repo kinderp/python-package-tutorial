@@ -163,4 +163,30 @@
   │       └── __init__.py
   └── test
   ```
+  
+* Run again building process and check dist content, you can see your code there
+  ```
+  rm -rf dist
+  pyproject-build
+  ```
+  tar -ztvf dist/first-python-package-0.0.1.tar.gz
+  drwxrwxr-x antonio/antonio   0 2022-01-04 11:39 first-python-package-0.0.1/
+  -rw-rw-r-- antonio/antonio 1092 2021-12-23 15:25 first-python-package-0.0.1/LICENSE
+  -rw-rw-r-- antonio/antonio   50 2021-12-23 16:21 first-python-package-0.0.1/MANIFEST.in
+  -rw-rw-r-- antonio/antonio 4835 2022-01-04 11:39 first-python-package-0.0.1/PKG-INFO
+  -rw-rw-r-- antonio/antonio 4447 2021-12-23 15:35 first-python-package-0.0.1/README.md
+  -rw-rw-r-- antonio/antonio   90 2021-12-23 15:06 first-python-package-0.0.1/pyproject.toml
+  -rw-rw-r-- antonio/antonio  575 2022-01-04 11:39 first-python-package-0.0.1/setup.cfg
+  drwxrwxr-x antonio/antonio    0 2022-01-04 11:39 first-python-package-0.0.1/src/
+  drwxrwxr-x antonio/antonio    0 2022-01-04 11:39 first-python-package-0.0.1/src/first_python_package.egg-info/
+  -rw-rw-r-- antonio/antonio 4835 2022-01-04 11:39 first-python-package-0.0.1/src/first_python_package.egg-info/PKG-INFO
+  -rw-rw-r-- antonio/antonio  350 2022-01-04 11:39 first-python-package-0.0.1/src/first_python_package.egg-info/SOURCES.txt
+  -rw-rw-r-- antonio/antonio    1 2022-01-04 11:39 first-python-package-0.0.1/src/first_python_package.egg-info/dependency_links.txt
+  -rw-rw-r-- antonio/antonio    7 2022-01-04 11:39 first-python-package-0.0.1/src/first_python_package.egg-info/top_level.txt
+  drwxrwxr-x antonio/antonio    0 2022-01-04 11:39 first-python-package-0.0.1/src/imppkg/
+  -rw-rw-r-- antonio/antonio    0 2021-12-23 15:34 first-python-package-0.0.1/src/imppkg/__init__.py
+  -rw-rw-r-- antonio/antonio    0 2021-12-23 16:23 first-python-package-0.0.1/src/imppkg/data.json
+  -rw-rw-r-- antonio/antonio    0 2021-12-23 15:34 first-python-package-0.0.1/src/imppkg/hello.py
+  -rw-rw-r-- antonio/antonio    0 2021-12-23 16:05 first-python-package-0.0.1/src/imppkg/test_exclude_me_from_dist.py
+  ```
 
