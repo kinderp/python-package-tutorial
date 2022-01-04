@@ -23,6 +23,7 @@
   ```
   pyproject-build
   ```
+  
   ```
   * Creating venv isolated environment...
   * Installing packages in isolated environment... (setuptools >= 40.8.0, wheel)
@@ -166,8 +167,9 @@
   
 * Run again building process and check dist content, you can see your code there
   ```
-  rm -rf dist
-  pyproject-build
+  rm -rf dist && pyproject-build
+  ```
+  
   ```
   tar -ztvf dist/first-python-package-0.0.1.tar.gz
   drwxrwxr-x antonio/antonio   0 2022-01-04 11:39 first-python-package-0.0.1/
