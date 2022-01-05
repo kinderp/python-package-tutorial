@@ -17,7 +17,8 @@ Now python packages building process involves two main actors:
 1. A **build frontend:** it's just an interface between you and a build backend. [build](https://github.com/pypa/build) package is a build frontend and you'll need to install to follow this tutorial
 2. A **build backend**: it makes real dirty work of building artifacts (sdist or wheel). [setuptools](https://github.com/pypa/setuptools) is a build backend and we'll use it during this tutorial
 
-A build frontend and a build backend talk with each other throug an interface defined in [PEP 517](https://www.python.org/dev/peps/pep-0517/#build-backend-interface). 
+A build frontend and a build backend talk with each other throug an interface defined in [PEP 517](https://www.python.org/dev/peps/pep-0517/#build-backend-interface).
+
 
 ```
    +------------+
@@ -48,6 +49,10 @@ Altenatives build backends are for example: [poetry](https://python-poetry.org/)
 In this way you can change build backend used by build frontend, but how/where to specify which build backend you wanna use?
 
 According to [PEP 518](https://www.python.org/dev/peps/pep-0518/#specification) `pyproject.toml` is default configuartion file where you can define which build backend will be used and its dependecies
+
+Two other files as important as `pyproject.toml` in building process are:
+* `setup.py`
+* `setup.cfg`
 
 
 
