@@ -1,5 +1,28 @@
 # python-package-tutorial
 
+### Introduction
+
+In order to release your python code you need to package it building a python package.
+
+Do exist two different type of python packages:
+
+1. **Source distribution**: (called `sdist`) is a compressed archive file of the source code with an extension `tgz`, `tar.gz`
+2. **Binary distribution**: (called `wheel`) is a binary file with an extension `.whl`
+
+Main difference between those two artifcats is that a source distribution allows most anyone to build your code on their platform, a binary
+distribution is prebuilt for a given platform and saves users the work of building it themselves.
+
+Now python packages building process involves two main actors:
+
+1. A **build frontend:** it's just an interface between you and a build backend. [build](https://github.com/pypa/build) package is a build frontend and you'll need to install to follow this tutorial
+2. A **build backend**: it makes real dirty work of building artifacts (sdist or wheel). [setuptools](https://github.com/pypa/setuptools) is a build backend and we'll use it during this tutorial
+
+A build frontend and a build backend talk with each other throug an interface defined in [PEP 517](https://www.python.org/dev/peps/pep-0517/#build-backend-interface). 
+
+
+
+### Tutorial
+
 * Install `pyproject-build`
   ```
   pip install build
