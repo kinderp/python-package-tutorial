@@ -19,6 +19,30 @@ Now python packages building process involves two main actors:
 
 A build frontend and a build backend talk with each other throug an interface defined in [PEP 517](https://www.python.org/dev/peps/pep-0517/#build-backend-interface). 
 
+```
+   +------------+
+   |    build   |
+   |    (BE)    |
+   +------------+
+         ||
+         \/
+   +------------+
+   |   PEP 517  |
+   | (interface)|
+   +------------+
+         ||
+         \/
+   +------------+
+   | setuptools |
+   |    (BE)    |
+   +------------+
+   
+```
+
+In order to create a binary distribution (wheel) `setuptools` uses [wheel](https://github.com/pypa/wheel) package.
+
+`build-->setuptools-->wheel-->.whl`
+
 
 
 ### Tutorial
