@@ -51,10 +51,18 @@ In this way you can change build backend used by build frontend, but how/where t
 According to [PEP 518](https://www.python.org/dev/peps/pep-0518/#specification) `pyproject.toml` is default configuartion file where you can define which build backend will be used and its dependecies
 
 Two other files as important as `pyproject.toml` in building process are:
-* `setup.py`
-* `setup.cfg`
+* `setup.py` (dynamic): setup.py is the **build script** for setuptools. It tells setuptools about your package (such as the name and version) as well as which code files to include
+* `setup.cfg` (static): is the **configuration file** for setuptools. It tells setuptools about your package (such as the name and version) as well as which code files to include. Eventually much of this configuration may be able to move to pyproject.toml.
 
+They are basically used to define metadata of your package that will be consumed by build backend (setuptools)
 
+There are **two types of metadata**: static and dynamic.
+**Static metadata** (`setup.cfg`): guaranteed to be the same every time. This is simpler, easier to read, and avoids many common errors, like encoding errors.
+**Dynamic metadata** (`setup.py`): possibly non-deterministic. Any items that are dynamic or determined at install-time, as well as extension modules or extensions to setuptools, need to go into setup.py.
+
+Static metadata (setup.cfg) should be preferred. Dynamic metadata (setup.py) should be used only as an escape hatch when absolutely necessary. setup.py used to be required, but can be omitted with newer versions of setuptools and pip
+
+As mentioned in [official python documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#configuring-metadata) `pyproject.toml` + `setup.cfg` should be always preferred rather than `setup.py`
 
 ### Tutorial
 
