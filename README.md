@@ -48,7 +48,7 @@ Altenatives build backends are for example: [poetry](https://python-poetry.org/)
 
 In this way you can change build backend used by build frontend, but how/where to specify which build backend you wanna use?
 
-According to [PEP 518](https://www.python.org/dev/peps/pep-0518/#specification) `pyproject.toml` is default configuartion file where you can define which build backend will be used and its dependecies
+According to [PEP 518](https://www.python.org/dev/peps/pep-0518/#specification) `pyproject.toml` is default configuartion file where you can define which build backend will be used and its dependecies (for example we said that setuptools uses wheel to build binary distrubution so whell must be defined as setuptools's dependecy in `pyproject.toml` to make building process working)
 
 Two other files as important as `pyproject.toml` in building process are:
 * `setup.py` (dynamic): setup.py is the **build script** for setuptools. It tells setuptools about your package (such as the name and version) as well as which code files to include
