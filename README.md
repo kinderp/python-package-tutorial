@@ -43,6 +43,12 @@ In order to create a binary distribution (wheel) `setuptools` uses [wheel](https
 
 `build-->setuptools-->wheel-->.whl`
 
+Altenatives build backends are for example: [poetry](https://python-poetry.org/) and [flit](https://flit.readthedocs.io/)
+
+In this way you can change build backend used by build frontend, but how/where to specify which build backend you wanna use?
+
+According to [PEP 518](https://www.python.org/dev/peps/pep-0518/#specification) `pyproject.toml` is default configuartion file where you can define which build backend will be used and its dependecies
+
 
 
 ### Tutorial
