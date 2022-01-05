@@ -198,3 +198,24 @@
   -rw-rw-r-- antonio/antonio    0 2021-12-23 16:05 first-python-package-0.0.1/src/imppkg/test_exclude_me_from_dist.py
   ```
 
+* Even if `data.json` has been included into source distribution, it's still missing in .whl
+  ```
+  unzip -l dist/first_python_package-0.0.1-py3-none-any.whl
+  Archive:  dist/first_python_package-0.0.1-py3-none-any.whl
+    Length      Date    Time    Name
+  ---------  ---------- -----   ----
+          0  2021-12-23 14:34   imppkg/__init__.py
+          0  2021-12-23 15:23   imppkg/data.json
+          0  2021-12-23 14:34   imppkg/hello.py
+          0  2021-12-23 15:05   imppkg/test_exclude_me_from_dist.py
+       1092  2022-01-04 10:39   first_python_package-0.0.1.dist-info/LICENSE
+       4835  2022-01-04 10:39   first_python_package-0.0.1.dist-info/METADATA
+         92  2022-01-04 10:39   first_python_package-0.0.1.dist-info/WHEEL
+          7  2022-01-04 10:39   first_python_package-0.0.1.dist-info/top_level.txt
+        750  2022-01-04 10:39   first_python_package-0.0.1.dist-info/RECORD
+  ---------                     -------
+       6776                     9 files
+
+  ```
+
+* Set `include_package_data = True` in setup.cfg to include non python files in source distrubution into binary one [commit](https://github.com/kinderp/python-package-tutorial/commit/6ae8937b1c11170826d454048d34f41f33e2e837)
