@@ -164,8 +164,14 @@
   │       └── __init__.py
   └── test
   ```
-  
-* Run again building process and check dist content, you can see your code there
+
+* Add options in `setup.cfg` to inform setuptools how/where to find your packages [commit](https://github.com/kinderp/python-package-tutorial/commit/eeb5be3bd0b5807f1c6b5175afc3857cdca067c1)
+
+* Add a new file `data.json` to show how to add non python code [commit](https://github.com/kinderp/python-package-tutorial/commit/a7ae1b721cc957d31318dfedaf8bb0436413311f)
+
+* Add `MANIFEST.in` [commit](https://github.com/kinderp/python-package-tutorial/commit/f50cc86d97d0f61e1a6fe988c4f342fa2e37afb3)
+
+* Run again building process and check dist content, you can see your new package and `data.json` there
   ```
   rm -rf dist && pyproject-build
   ```
