@@ -17,7 +17,7 @@ def main():
         language = "IT"
 
     result = say_hello(language)
-    print(result)
+    print(result.text)
 
 
 if __name__ == "__main__":
