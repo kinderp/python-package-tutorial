@@ -285,3 +285,27 @@ As mentioned in [official python documentation](https://packaging.python.org/en/
   ```
 
 * Set `include_package_data = True` in setup.cfg to include non python files in source distrubution into binary one [commit](https://github.com/kinderp/python-package-tutorial/commit/6ae8937b1c11170826d454048d34f41f33e2e837)
+
+
+## Handling package dependencies and entrypoint
+
+* Add a main module: `src/imppkg/say.py` [commit](https://github.com/kinderp/python-package-tutorial/commit/282c1ce258a00ab053e01fd96c5c485478762ec0)
+
+  Now we have an entrypoint for our project `src.imppkg.say.main()`, some new code has been added in `src/imppkg/hello.py` in order to be able our project to do something: it just receives in input a language (a language code following [iso639-1](https://it.wikipedia.org/wiki/ISO_639?uselang=it)) and print `Hello World` translated in that language.
+  In order to test you need to create a vevn and install say hello in your venv. Run donw below command in say hello root dir in order to respectively:
+  
+  * create a venv
+  * activate a venv
+  * install say hello in a venv 
+  
+  ```
+  python3 -m venv .venv
+  ```
+  
+  ```
+  source .venv/bin/activate
+  ```
+  
+  ```
+  pip install .
+  ```
