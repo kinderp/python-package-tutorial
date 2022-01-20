@@ -309,3 +309,26 @@ As mentioned in [official python documentation](https://packaging.python.org/en/
   ```
   pip install .
   ```
+  
+  At this point you have say hello installed in your env (and venv is activated under your fingers) and you can test it in this way:
+  
+  ```
+  python -m imppkg.say DE
+  Traceback (most recent call last):
+  File "/home/antonio/.pyenv/versions/3.9.0/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/antonio/.pyenv/versions/3.9.0/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/antonio/dev/python-package-tutorial/.venv/lib/python3.9/site-packages/imppkg/say.py", line 3, in <module>
+    from imppkg.hello import say_hello
+  File "/home/antonio/dev/python-package-tutorial/.venv/lib/python3.9/site-packages/imppkg/hello.py", line 1, in <module>
+    from googletrans import Translator
+  ModuleNotFoundError: No module named 'googletrans'
+
+  ```
+  
+  As you can see we didn't include googletrans as depencencies of your project, we use it to translate `Hello World`.
+  Let's add googletrans as dep in our project
+  
+* Add `install_requires` key of the `[options]` section in the `setup.cfg` [commit](https://github.com/kinderp/python-package-tutorial/commit/2846e9453e699af973af62b88076e43c59c7ff3c)
+  
