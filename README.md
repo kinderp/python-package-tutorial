@@ -354,3 +354,5 @@ As mentioned in [official python documentation](https://packaging.python.org/en/
   python -m imppkg.say DE
   Hallo Welt
   ```
+As you can see above you're running our project as module but we'd like to have a command called `say` installed in `bin` in order to execute our project just typing `say DE`. In order to do that we need to add an entrypoint in `setup.cfg`
+
