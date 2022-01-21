@@ -356,3 +356,8 @@ As mentioned in [official python documentation](https://packaging.python.org/en/
   ```
 As you can see above you're running our project as module but we'd like to have a command called `say` installed in `bin` in order to execute our project just typing `say DE`. In order to do that we need to add an entrypoint in `setup.cfg`
 
+* Add an `entry_point` in `setup.cfg`, a command called `say` will be avaible in `bin` after a new installation [commit](https://github.com/kinderp/python-package-tutorial/commit/14070f8ac7e437f1556a4c96071dc8fadac988a8). Remove `.venv` and re-create a new one as you did before, then activate it and run `say` in this say:
+  ```
+  .venv/bin/say DE
+  Hallo Welt
+  ```
