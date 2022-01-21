@@ -332,3 +332,25 @@ As mentioned in [official python documentation](https://packaging.python.org/en/
   
 * Add `install_requires` key of the `[options]` section in the `setup.cfg` [commit](https://github.com/kinderp/python-package-tutorial/commit/2846e9453e699af973af62b88076e43c59c7ff3c)
   
+* Now let's remove our venv 
+  ```
+  rm -rf .venv
+  ```
+* Create a new venv and install our project again
+    ```
+  python3 -m venv .venv
+  ```
+  
+  ```
+  source .venv/bin/activate
+  ```
+  
+  ```
+  pip install .
+  ```
+  
+* Run it again 
+  ```
+  python -m imppkg.say DE
+  Hallo Welt
+  ```
