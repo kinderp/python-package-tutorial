@@ -559,7 +559,7 @@ As you can see above you're running our project as module but we'd like to have 
   [tox:tox]
   isolated_build = True
   ```
-* Set envs under test
+* Set envs under test and then run `tox` again
 
   ```
   The envlist key in the tox configuration defines which environments
@@ -579,4 +579,42 @@ As you can see above you're running our project as module but we'd like to have 
   [tox:tox]
   isolated_build = True
   envlist = py39
+  ```
+
+* Configure tox test environment with `posargs`
+
+  ```
+  So far you’ve configured tox in the [tox:tox] section to indicate how to build your package
+  and which environments to create. To configure the test environments themselves,  add a new
+  [testenv] section. This section is used by  default for any configured test environment. In
+  this section, you tell tox what commands  to run using the commands key. This key accepts a
+  list of commands to run, with some special syntax available to pass arguments to the comman
+  ds within each command you can use the {posargs} placeholder, which will pass any arguments
+  to specify to the tox command along to the test environment commands. As an example, if you
+  specify python -c 'print("{posargs}")' as a command, running tox hello world will execute
+
+  python -c 'print("hello world")' in the environment.
+
+  You can also pass options to a test command by separating them from the tox command and any
+  of its options with a -- . As an example, if you specify python as a command, running tox --
+  -V will execute python -V in the environment
+
+  After you add the pytest command to the commands list, run tox again. You’ll see that, after the
+  steps you saw previously, tox tries to execute pytest and fails as shown in the following output
+
+  WARNING: test command found but not installed in testenv
+    cmd: /home/antonio/dev/python-package-tutorial/.venv/bin/pytest
+    env: /home/antonio/dev/python-package-tutorial/.tox/py39
+  Maybe you forgot to specify a dependency? See also the allowlist_externals envconfig setting.
+
+  Even though you installed pytest into the virtual environment for your project earlier, recall
+  that tox creates and uses an isolated virtual environment for each test environment.This means
+  that tox won’t use the copy of pytest that you’ve been running. You haven’t told tox to install
+  pytest in those environments, so it can’t find a copy there either.
+  ```
+  
+  ```
+  [testenv]
+  commands =
+    pytest {posargs}
   ```
