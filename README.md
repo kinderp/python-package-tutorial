@@ -361,3 +361,39 @@ As you can see above you're running our project as module but we'd like to have 
   .venv/bin/say DE
   Hallo Welt
   ```
+  
+  ## Add a test suite
+  
+  In order to biuld a test seuite you'll need a test runner. We'll use `pytest`(`python -m pytest`)
+  
+  * Add pytest's configuration in `setup.cfg` [commit](https://github.com/kinderp/python-package-tutorial/commit/23ce412602f08a82da78eb0ca8840ebd7cb4c385)
+    * add `testpaths` under `[tool:pytest]`
+    
+    ```
+    pytest is looking everywhere under the package’s root directory for tests
+    To  encourage  placement of tests in the appropriate location, you should
+    configure pytest to look only in the test/ directory.You can add configur
+    ation for pytest into your package’s setup.cfg  file  using a new section
+    called [tool:pytest] . The testpaths key maps to a list of paths in which
+    to look for tests. You need just one: test .After you add this configurat
+    ion,pytest should confirm in its output both that it’s using setup.cfg as
+    the  configuration  file  and  that  it found the testpaths configuration
+    ```
+
+    ```
+    [tool:pytest]
+    testpaths = test
+    ```
+  * Add a simple `assert True` to mock a test suite [commit](https://github.com/kinderp/python-package-tutorial/commit/fad6f4e4b9dc43667acc2ed8660aacd1c1c00a68)
+  * Run `python -m pytest`, you'll get an error like below, fix it just importing your packages as done in this [commit](https://github.com/kinderp/python-package-tutorial/commit/abbdda1320d12968ad2aba070ec6e791ae52a173)
+    ```
+    Module imppkg was never imported. (module-not-imported)
+    ```
+  * Now Run pytest agaiin, it should work having your test suite up and running
+
+## Add test coverage measurement
+
+* Install `pytest-cov`
+* Try it just running `python -m pytest --cov`
+* You can specify on which module (we have one module: `imppkg`) --cov should measure test coverage in this way: `python -m pytest --cov=imppkg`  
+* 
