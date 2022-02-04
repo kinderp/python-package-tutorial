@@ -396,4 +396,37 @@ As you can see above you're running our project as module but we'd like to have 
 * Install `pytest-cov`
 * Try it just running `python -m pytest --cov`
 * You can specify on which module (we have one module: `imppkg`) --cov should measure test coverage in this way: `python -m pytest --cov=imppkg`  
-* 
+* Add branch coverage [commit](https://github.com/kinderp/python-package-tutorial/commit/02a00eab913504f51ccf18b2a71fb75abea662fa)
+
+  ```
+  It enables branch coverage, in other words how many
+  alternative execution paths are possible, and which
+  of those paths are untested.
+
+  To configure branch coverage for your tests, add  a
+  new section to setup.cfg called [coverage:run] . In
+  this section, add a branch key with a value of  True
+  This produces two new columns in the coverage output
+
+  - Branch : how many branches exist through the code
+  - BrPart : how many branches are only partially covered by tests
+
+  python -m pytest --cov=imppkg
+
+  test/test_translations.py .     [100%]
+
+  ----------- coverage: platform linux, python 3.9.0-final-0 -----------
+  Name                                                                    Stmts   Miss Branch BrPart  Cover
+  ---------------------------------------------------------------------------------------------------------
+  .venv/lib/python3.9/site-packages/imppkg/__init__.py                        0      0      0      0   100%
+  .venv/lib/python3.9/site-packages/imppkg/hello.py                           4      1      0      0    75%
+  .venv/lib/python3.9/site-packages/imppkg/say.py                            18     12      4      1    32%
+  .venv/lib/python3.9/site-packages/imppkg/test_exclude_me_from_dist.py       0      0      0      0   100%
+  ---------------------------------------------------------------------------------------------------------
+  TOTAL                                                                      22     13      4      1    38%
+  ```
+
+  ```
+  [coverage:run]
+  branch = True
+  ```
