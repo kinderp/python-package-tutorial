@@ -525,3 +525,28 @@ As you can see above you're running our project as module but we'd like to have 
      src/imppkg/
     .venv/*/python3.9/site-packages/imppkg/
   ```
+  
+* Skip covered files [commit](https://github.com/kinderp/python-package-tutorial/commit/980b6318ad3e308e7ec73cb35b53b9da9bb8666f)
+
+  ```
+  As your project grows and you spend more time testing
+  it might become harder to pick  out uncovered modules
+  from the coverage report. If you’re reaching 100% cov
+  erage for several files, it can  be helpful to ignore
+  them in the report output. You can add a skip_covered
+  key with avalue of True to the [coverage:report] sect
+  ion  to filter those out. Files that are filtered out
+  are only removed from the list their coverage's still
+  considered in the total coverage calculation for your
+  code
+
+  test/test_translations.py .                    [100%]
+
+  ----------- coverage: platform linux, python 3.9.0-final-0 -----------
+  Name                  Stmts   Miss Branch BrPart  Cover   Missing
+  -----------------------------------------------------------------
+  src/imppkg/hello.py       4      1      0      0    75%   8
+  src/imppkg/say.py        18     12      4      1    32%   9-20, 24
+  -----------------------------------------------------------------
+  TOTAL                    22     13      4      1    38%
+  ```
