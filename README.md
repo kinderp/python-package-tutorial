@@ -430,3 +430,19 @@ As you can see above you're running our project as module but we'd like to have 
   [coverage:run]
   branch = True
   ```
+
+* Improve coverage output adding source key under `[coverage:run]` [commit](https://github.com/kinderp/python-package-tutorial/commit/f491e21a7d504bd75a4f03fe38418c1bd9dc0786)
+  
+  ```
+  add a source key with a value of imppkg
+  This  is a handy way to stop specifying
+  imppkg  to  the --cov option for pytest
+  each time, and ensures that anyone runn
+  ing tests with coverage will see the sa
+  me output.
+  ```
+  
+  ```
+  [coverage:run]
+  source = imppkg
+  ```
