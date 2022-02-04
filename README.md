@@ -446,3 +446,49 @@ As you can see above you're running our project as module but we'd like to have 
   [coverage:run]
   source = imppkg
   ```
+* Avoid to type `--cov` every time and add that to `addopts` key under `[tool:pytest]` [commit[(https://github.com/kinderp/python-package-tutorial/commit/c8ac84a9e5a8a7f76f4e6a4423a90004ac911abe)
+  
+  ```
+  You can also avoid specifying --cov
+  altogether by adding an addopts key
+  to the [tool:pytest] section with a
+  value of --cov . You  can  override
+  this  at  the command line later as
+  desired using the corresponding:
+  --no-cov option.
+  ```
+  
+  ```
+  [tool:pytest]
+  testpaths = test
+  addopts = --cov
+  ```
+* Show missing tests in coverage [commit](https://github.com/kinderp/python-package-tutorial/commit/efcc7b089ebe0d6189b0ae0f5309b555589ae20d)
+  
+  ```
+  Coverage.py can keep track of  exactly  which  lines and branches
+  aren’t covered by tests, which is a big help as  you try to write
+  tests  that increase the coverage of your code. You can turn this
+  on by  adding a new section to setup.cfg called [coverage:report]
+  with a new key called show_missing set to a value of True.   This
+  will produce  one  new Missing column in the coverage output. The
+  Missing column lists the following: Lines or ranges of lines that
+  aren’t covered.  As an example,  9 means line 9 is uncovered, and
+  10-12 means lines 10, 11, and 12 are uncovered.  Logic  flow from
+  one line to another that represents a branch that isn’t  covered.
+  As an example, 1319 means the execution path that starts at line
+  13 that would next execute line 19 is uncovered
+
+  test/test_translations.py .                                [100%]
+
+  ----------- coverage: platform linux, python 3.9.0-final-0 -----------
+  Name                                                                    Stmts   Miss Branch BrPart  Cover   Missing
+  -------------------------------------------------------------------------------------------------------------------
+  .venv/lib/python3.9/site-packages/imppkg/__init__.py                        0      0      0      0   100%
+  .venv/lib/python3.9/site-packages/imppkg/hello.py                           4      1      0      0    75%   8
+  .venv/lib/python3.9/site-packages/imppkg/say.py                            18     12      4      1    32%   9-20, 24
+  .venv/lib/python3.9/site-packages/imppkg/test_exclude_me_from_dist.py       0      0      0      0   100%
+  -------------------------------------------------------------------------------------------------------------------
+  TOTAL                                                                      22     13      4      1    38%
+  ```
+
