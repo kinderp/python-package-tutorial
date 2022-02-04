@@ -492,3 +492,29 @@ As you can see above you're running our project as module but we'd like to have 
   TOTAL                                                                      22     13      4      1    38%
   ```
 
+* Simplify coverage report output [commit](https://github.com/kinderp/python-package-tutorial/commit/01887929375aef769fc14ea6877a4bd702c0a22d)
+  
+  ```
+  In your project, the .venv directory of your
+  installed  package is  roughly equivalent to
+  the  src/imppkg/  directory of the package’s
+  source code.  Tell Coverage.py  this  is the
+  case  with a new section in setup.cfg called
+  [coverage:paths] .  Add a source key to this
+  section, with  a  list  value  of equivalent
+  file paths. Coverage.py  will  use the first
+  entry to replace  any  subsequent entries in
+  the output
+
+  test/test_translations.py .           [100%]
+
+  ----------- coverage: platform linux, python 3.9.0-final-0 -----------
+  Name                                      Stmts   Miss Branch BrPart  Cover   Missing
+  -------------------------------------------------------------------------------------
+  src/imppkg/__init__.py                        0      0      0      0   100%
+  src/imppkg/hello.py                           4      1      0      0    75%   8
+  src/imppkg/say.py                            18     12      4      1    32%   9-20, 24
+  src/imppkg/test_exclude_me_from_dist.py       0      0      0      0   100%
+  -------------------------------------------------------------------------------------
+  TOTAL                                        22     13      4      1    38%
+  ```
