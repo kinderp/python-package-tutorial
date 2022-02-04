@@ -559,7 +559,7 @@ As you can see above you're running our project as module but we'd like to have 
   [tox:tox]
   isolated_build = True
   ```
-* Set envs under test
+* Set envs under test [commit](https://github.com/kinderp/python-package-tutorial/commit/4ff0a042d6b52a70aba9009cee37dcdccbe77f42)
   ```
   The envlist key in the tox configuration defines which environments
   tox should create and execute by default when running the tox comma
@@ -580,7 +580,7 @@ As you can see above you're running our project as module but we'd like to have 
   envlist = py39
   ```
 
-* Configure tox test environment with `posargs`
+* Configure tox test environment with `posargs` [commit](https://github.com/kinderp/python-package-tutorial/commit/29a124ba808fef2039e1e605313e0b0a6b7ee32a)
 
   ```
   So far you’ve configured tox in the [tox:tox] section to indicate how to build your package
@@ -618,7 +618,7 @@ As you can see above you're running our project as module but we'd like to have 
     pytest {posargs}
   ```
 
-* Define dependencies for tox envs, python packages we'll need in tox envs
+* Define dependencies for tox envs, python packages we'll need in tox envs [commit](https://github.com/kinderp/python-package-tutorial/commit/88fa23cdc2ac0d4955f2b3ed72cbdb94cd755f52)
 
   ```
   You can specify dependencies in the [testenv] section using the  deps key
