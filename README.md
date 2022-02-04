@@ -559,8 +559,7 @@ As you can see above you're running our project as module but we'd like to have 
   [tox:tox]
   isolated_build = True
   ```
-* Set envs under test and then run `tox` again
-
+* Set envs under test
   ```
   The envlist key in the tox configuration defines which environments
   tox should create and execute by default when running the tox comma
@@ -618,3 +617,20 @@ As you can see above you're running our project as module but we'd like to have 
   commands =
     pytest {posargs}
   ```
+
+* Define dependencies for tox envs, python packages we'll need in tox envs
+
+  ```
+  You can specify dependencies in the [testenv] section using the  deps key
+  The value for deps is a list of Python packages to install,  with  syntax
+  similar to requirements.txt or install_requires . For now, add pytest and
+  pytest-cov as dependencies
+  ```
+  
+  ```
+  deps =
+    pytest
+    pytest-cov
+  ```
+  
+* Run `tox`
