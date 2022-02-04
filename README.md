@@ -518,3 +518,10 @@ As you can see above you're running our project as module but we'd like to have 
   -------------------------------------------------------------------------------------
   TOTAL                                        22     13      4      1    38%
   ```
+
+  ```
+  [coverage:paths]
+  source =
+     src/imppkg/
+    .venv/*/python3.9/site-packages/imppkg/
+  ```
