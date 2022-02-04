@@ -550,3 +550,33 @@ As you can see above you're running our project as module but we'd like to have 
   -----------------------------------------------------------------
   TOTAL                    22     13      4      1    38%
   ```
+
+## Multiple test envs with tox
+
+* Add tox settings in `setup.cfg` [commit](https://github.com/kinderp/python-package-tutorial/commit/81e55e44453e0544e2984cdfbb2eac27a9000f44) and then run `tox`
+  
+  ```
+  [tox:tox]
+  isolated_build = True
+  ```
+* Set envs under test
+
+  ```
+  The envlist key in the tox configuration defines which environments
+  tox should create and execute by default when running the tox comma
+  nd. The environments in the envlist can also be run individually as
+  desired by using the -e argument to  the tox command and specifying
+  the environment name. To get started,  add  an  envlist  key to the
+  tox:tox section in your setup.cfg file with a value of py39
+
+  The next time you run tox, it will:
+  1. Create an isolated build of your package
+  2. Create a virtual environment with a copy of Python 3.9
+  3. Install your package in the virtual environment
+  ```
+  
+  ```
+  [tox:tox]
+  isolated_build = True
+  envlist = py39
+  ```
